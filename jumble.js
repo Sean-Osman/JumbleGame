@@ -23,9 +23,9 @@ class App {
   }
   
   initGrid(){
-    const grid = Array(5);
+    const grid = Array(7);
     for(let i=0;i<grid.length;i++){
-      grid[i] = [false, false, false,false, false];
+      grid[i] = [false, false, false, false, false,false, false];
     }
     return grid;
   }
@@ -38,9 +38,9 @@ class App {
     const location = JSON.parse(locationJSON);
     const i = location.r;
     const j = location.c;
-    this.grid[i][j] = !this.grid[i][j];
-    this.render(i,j, false);
-    const dirs = [[1,0],[-1,0],[0,1],[0,-1]];
+    let dirs = [[0,0],[-1,-1],[-1,0]];
+    if(this.grid[i][j])
+      dirs = [[0,0],[1,0],[1,1],[1,-1]];
     for(let d of dirs){
       let ni = i+d[0];
       let nj = j+d[1];
@@ -52,7 +52,7 @@ class App {
   }
 }
 
-new App(document.querySelector('#container'), 5);
+new App(document.querySelector('#container'), 7);
 
 function Help(){
   if(document.getElementById("help").style.display === "none"){
