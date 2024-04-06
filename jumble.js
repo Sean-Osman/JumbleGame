@@ -20,10 +20,13 @@ class jumble {
     //   div.className = this.grid[r][c] ? ('flip' + (delay ? ' flip-delay':'')): '';
     // }
     
-    startGame(){ //Creates a 5x5 grid of off tiles
-      const grid = Array(5);
+    startGame(){ //Creates a 5x5 grid of turned off tiles
+      const grid = Array(5)(5);
       for(let i=0;i<grid.length;i++){
-        grid[i] = [false, false, false,false, false];
+        for(let j=0; j<grid.length; j++)
+        {
+            grid[i][j] = [false];
+        }
       }
       return grid;
     }
