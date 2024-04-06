@@ -6,12 +6,12 @@ class App {
     this.flip = this.flip.bind(this);
     this.element.addEventListener('click', this.flip);
 
-    for(let r=0;r< size; r++){
-      for(let c=0;c< size; c++){
+    for(let row=0;row< size; row++){
+      for(let col=0;col< size; col++){
         let div = document.createElement('div');
         div.style.width = (250/size)+'px';
         div.style.height = (250/size)+'px';
-        div.dataset.location = JSON.stringify({r,c});
+        div.dataset.location = JSON.stringify({r: row,c: col});
         element.appendChild(div);
       }
     }
@@ -53,3 +53,27 @@ class App {
 }
 
 new App(document.querySelector('#container'), 5);
+
+function Help(){
+  if(document.getElementById("help").style.display === "none"){
+    document.getElementById("main").style.display = "none";
+    document.getElementById("stats").style.display = "none";
+    document.getElementById("help").style.display = "block";
+  }
+  else{
+    document.getElementById("main").style.display = "block";
+    document.getElementById("help").style.display = "none";
+  }
+}
+
+function Stats(){
+  if(document.getElementById("stats").style.display === "none"){
+    document.getElementById("main").style.display = "none";
+    document.getElementById("help").style.display = "none";
+    document.getElementById("stats").style.display = "block";
+  }
+  else{
+    document.getElementById("main").style.display = "block";
+    document.getElementById("stats").style.display = "none";
+  }
+}

@@ -23,18 +23,24 @@
 </head>
 
 <body>
-
   <!-- Add your site or application content here -->
   <div style = "text-align: center;">
     <h1>Jumble</h1>
+    <button onclick="Help()">?</button>
+    <button onclick="Stats()">Stats</button>
   </div>
-  <p>Hello world! This is HTML5 Boilerplate.</p>
-  <!-- <div style = "text-align: center;">
-    <canvas id="canvas" width="730" height="730"></canvas>
-  </div> -->
-  <div id="container">
+  <div id="main">
+    <p>Hello world! This is HTML5 Boilerplate.</p>
+    <div id="container">
+    </div>
+    <script src="jumble.js"></script>
   </div>
-  <script src="jumble.js"></script>
+  <div id="help" style="display: none;">
+    <p>This is page 2</p>
+  </div>
+  <div id="stats" style="display: none;">
+    <p>This is the stats page</p>
+  </div>
 </body>
 
 </html>
